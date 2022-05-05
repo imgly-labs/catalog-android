@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import ly.img.catalog.R
 import ly.img.catalog.data.ExampleItem
 
-class CatalogAdapter(private val data: List<ExampleItem>) : RecyclerView.Adapter<CatalogAdapter.ExampleViewHolder>() {
+class CatalogAdapter(private val data: List<ExampleItem>, private val listener: (item: ExampleItem) -> Unit) :
+    RecyclerView.Adapter<CatalogAdapter.ExampleViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -24,11 +25,11 @@ class CatalogAdapter(private val data: List<ExampleItem>) : RecyclerView.Adapter
         return data.size
     }
 
-    class ExampleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ExampleViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         init {
             view.setOnClickListener {
-
+                listener(data[adapterPosition])
             }
         }
 

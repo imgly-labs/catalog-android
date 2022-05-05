@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
-        recyclerView.adapter = CatalogAdapter(items)
+        recyclerView.adapter = CatalogAdapter(items) {
+            it.example.invoke()
+        }
     }
 }
