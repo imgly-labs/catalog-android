@@ -2,7 +2,6 @@ package ly.img.catalog.data
 
 import ly.img.catalog.examples.Example
 import ly.img.catalog.examples.ShowPhotoEditor
-import kotlin.reflect.KClass
 
 val items = arrayListOf(
     ExampleItem("Show Editor", "Presents the photo editor", Product.PESDK, ShowPhotoEditor::class.java),
