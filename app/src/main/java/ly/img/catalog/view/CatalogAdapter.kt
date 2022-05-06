@@ -29,7 +29,7 @@ class CatalogAdapter(private val data: List<ExampleItem>, private val listener: 
 
         init {
             view.setOnClickListener {
-                listener(data[adapterPosition])
+                listener(data[bindingAdapterPosition])
             }
         }
 
